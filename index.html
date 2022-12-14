@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>    
+    <section id="seleccionar_mascota">
+        <h1>POKEMON ! 🔥💦🪨</h1>
+        <h2 class="subtitulo">Elige tu mascota:</h2>
+
+        <div class="tarjetitas">
+            <label class="tarjeta" for="langostino">
+                <p>Langostino</p>
+                <img class="imagen_pokemon" src="assets/langostino.png" alt="Langostino">
+            </label>
+            <input type="radio" name="mascota" id="langostino">
+
+            <label class="tarjeta" for="focaccia">
+                <p>Focaccia</p>
+                <img src="assets/focaccia.png" alt="Focaccia" class="imagen_pokemon">
+            </label>
+            <input type="radio" name="mascota" id="focaccia">
+
+            <label class="tarjeta" for="yama">
+                <p>Llama</p>
+                <img src="assets/llama.png" alt="Llama" class="imagen_pokemon">
+            </label>
+            <input type="radio" name="mascota" id="yama">
+
+            <label class="tarjeta" for="dragon">
+                <p>Dragon</p>
+                <img src="assets/dragon_cuerpo.png" alt="Dragon" class="imagen_pokemon">
+            </label>
+            <input type="radio" name="mascota" id="dragon">
+
+            <label class="tarjeta" for="rock">
+                <p>Rock</p>
+                <img src="assets/roca.png" alt="Rock" class='imagen_pokemon'>
+            </label>
+            <input type="radio" name="mascota" id="rock">
+            
+            <label class="tarjeta" for="granito">
+                <p>Escorpión</p>
+                <img src="assets/granito.png" alt="Escorpión" class="imagen_pokemon">
+            </label>
+            <input type="radio" name="mascota" id="granito">
+        </div>
+
+        <button id="boton_mascota">Seleccionar mascota</button>
+    </section>
+
+    <section id="seleccionar_ataque">
+        <h1>POKEMON ! 🔥💦🪨</h1>
+        <h2>Elige tu ataque:</h2>
+        <p><span id="mascota_jugador"></span> - <span id="vidas_jugador">3</span>❤️ | <span id="mascota_pc"></span> - <span id="vidas_pc">3</span>❤️</p>
+        <div>
+            <button class="botones_ataque" id="boton_fuego" disabled>Fuego 🔥</button>
+            <button class="botones_ataque" id="boton_agua" disabled>Agua 💦</button>
+            <button class="botones_ataque" id="boton_piedra" disabled>Piedra 🪨</button>
+        </div>
+    </section>
+
+    <section id="mensajes">
+        
+    </section>
+
+    <section id="seccion_reiniciar">
+        <button id="boton_reiniciar">Reiniciar</button>
+    </section>
+    <script src="js/pokemon.js"></script>
+</body>
+</html>
+<!-- Langostino -> agua
+Focaccia -> agua y fuego
+Yama -> fuego y piedra
+Dragon -> fuego
+Rock -> piedra
+Granito -> piedra y agua -->

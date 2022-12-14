@@ -1,0 +1,105 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+
+    background-color: #404258;
+    color: white;
+}
+
+h1 {
+    color: whitesmoke;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 80px;
+    margin-bottom: 20px;
+    margin-top: 130px;
+
+}
+
+h2 {
+    font-size: 28px;
+}
+
+#seleccionar_mascota {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta {
+    width: 137px;
+    height: 190px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #6B728E;
+    margin: 5px;
+    border: 1px solid;
+    border-color: #EB6440;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tarjeta:hover {
+    background-color: #50577A;
+} 
+.imagen_pokemon {
+    width: 100px;
+}
+
+input {
+    display: none;
+}
+
+.tarjetitas {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    margin-top: 30px;
+    border-width: 2px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #6B728E;
+    border: 1px solid;
+    border-color: #EB6440;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    padding: 16px;
+}
+.botones_ataque{
+    margin-top: 30px;
+    border-width: 2px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #6B728E;
+    border: 4px solid;
+    border-color: #EB6440;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    padding: 16px;
+}
+
+.tarjeta p {
+    margin-bottom: 25px;
+}
+#seleccionar_ataque {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#mensajes {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+
+}
+
+#seccion_reiniciar {
+    justify-content: center
+}
