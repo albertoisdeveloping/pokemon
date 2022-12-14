@@ -74,7 +74,7 @@ button {
     padding: 16px;
 }
 .botones_ataque{
-    margin-top: 30px;
+    margin: 10px;
     border-width: 2px;
     font-family: 'Press Start 2P', cursive;
     background-color: #6B728E;
@@ -97,9 +97,22 @@ button {
 #mensajes {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
-
+    display: flex;
+    flex-direction: column-reverse
 }
 
 #seccion_reiniciar {
     justify-content: center
+}
+
+#contenedor_vidas {
+    display: flex;
+    align-items: center
+
+}
+#contenedor_vidas div {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
