@@ -171,7 +171,7 @@ function ataquePiedra()
 }
 
 
-//FUNCION ELECCION ATAQUE PC - Asignamos palabra a ataquePc
+//FUNCION ELECCION ATAQUE PC - Asignamos palabra a ataquePc Y CORAZONES
 function eleccionAtaquePc() {
     let ataqueAleatorio = aleatorio(1,3)
     if (ataqueAleatorio == '1')
@@ -189,6 +189,40 @@ function eleccionAtaquePc() {
         ataquePc = 'Piedra'
     }
     combate()
+
+    //CORAZONES DEL JUGADOR
+    if (vidasJugador == 3) {
+        document.getElementById('corazones_jugador').innerHTML = '❤️❤️❤️'
+    }
+    else if (vidasJugador == 2)
+    {
+        document.getElementById('corazones_jugador').innerHTML = '❤️❤️'
+    }
+    else if (vidasJugador == 1)
+    {
+        document.getElementById('corazones_jugador').innerHTML = '❤️'
+    }
+    else if (vidasJugador == 0)
+    {
+        document.getElementById('corazones_jugador').innerHTML = '💀'
+    }
+    
+    //CORAZONES DEL PC
+    if (vidasPc == 3) {
+        document.getElementById('corazones_pc').innerHTML = '❤️❤️❤️'
+    }
+    else if (vidasPc == 2)
+    {
+        document.getElementById('corazones_pc').innerHTML = '❤️❤️'
+    }
+    else if (vidasPc == 1)
+    {
+        document.getElementById('corazones_pc').innerHTML = '❤️'
+    }
+    else if (vidasPc == 0)
+    {
+        document.getElementById('corazones_pc').innerHTML = '💀'
+    }
 }
 
 //FUNCION COMBATE
