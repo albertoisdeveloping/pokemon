@@ -65,7 +65,7 @@ function seleccionarMascotaJugador() {
         spanMascotaJugador.innerHTML = 'Focaccia'
     }
     else if (imputYama.checked == true) {
-        spanMascotaJugador.innerHTML = 'Yama'
+        spanMascotaJugador.innerHTML = 'Llama'
     }
     else if (imputDragon.checked == true) {
         spanMascotaJugador.innerHTML = 'Dragon'
@@ -128,7 +128,7 @@ function eleccionPc() {
     if (numeroAleatorio == '3')
     {
         spanImagenPc.innerHTML = '<img src="assets/llama.png" alt="">'
-        return 'Yama'
+        return 'Llama'
     }
     if (numeroAleatorio == '4')
     {
