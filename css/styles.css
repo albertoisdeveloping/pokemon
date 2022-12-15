@@ -111,8 +111,11 @@ button {
 
 }
 #contenedor_vidas div {
-    margin: 10px;
+    margin: 10px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#contenedor_vidas p {
+    font-size: 25px;
 }

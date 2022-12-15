@@ -14,6 +14,7 @@ function iniciarJuego() {
     //AL PULSAR SELECCIONAR MASCOTA, INICIA F.SELECCIONMASCOTA
     let botonMascota = document.getElementById('boton_mascota')
     botonMascota.addEventListener('click', seleccionarMascotaJugador)
+    botonMascota.addEventListener('click', seleccionImagenJugador)
 
     //AL PULSAR BOTONES DE ATAQUES, INICIA F.ATAQUEX
     let botonFuego = document.getElementById('boton_fuego')
@@ -53,6 +54,7 @@ function seleccionarMascotaJugador() {
 
     let spanMascotaJugador = document.getElementById('mascota_jugador')
     let spanMascotaPc = document.getElementById('mascota_pc')
+
     
     //SEGÚN MASCOTA CHEKEADA, MOSTRAR 'MASCOTAX' EN EL SPAN ELEGIDO, SINO, ALERTA SELECCIONAR MASCOTA
     if (imputLangostino.checked == true) 
@@ -106,34 +108,42 @@ function seleccionarMascotaJugador() {
 
 }
 
-//ELEGIR MASCOTA ALEATORIA PC
+//ELEGIR MASCOTA ALEATORIA PC y colocarle su imagen
 function eleccionPc() {
+    let spanImagenPc = document.getElementById('imagen_pc')
+
     let numeroAleatorio = aleatorio(1,6)
     if (numeroAleatorio == '1')
     {
+        spanImagenPc.innerHTML = '<img src="assets/langostino.png" alt="">'
         return 'Langostino'
     }
     else
     if (numeroAleatorio == '2')
     {
+        spanImagenPc.innerHTML = '<img src="assets/focaccia.png" alt="">'
         return 'Focaccia'
     }
     else
     if (numeroAleatorio == '3')
     {
+        spanImagenPc.innerHTML = '<img src="assets/llama.png" alt="">'
         return 'Yama'
     }
     if (numeroAleatorio == '4')
     {
+        spanImagenPc.innerHTML = '<img src="assets/dragon_cuerpo.png" alt="">'
         return 'Dragon'
     }
     if (numeroAleatorio == '5')
     {
+        spanImagenPc.innerHTML = '<img src="assets/roca.png" alt="">'
         return 'Rock'
     }
     if (numeroAleatorio == '6')
     {
-        return 'Granito'
+        spanImagenPc.innerHTML = '<img src="assets/granito.png" alt="">'
+        return 'Escorpión'
     }
     else
     {
@@ -245,4 +255,38 @@ function mensajeFinal(resultadoFinal) {
 //REINICIA: MENSAJES, VIDAS, Y MASCOTAS
 function reiniciar() {
     location.reload()
+}
+
+function seleccionImagenJugador() {
+    let imputLangostino = document.getElementById('langostino')
+    let imputFocaccia = document.getElementById('focaccia')
+    let imputYama = document.getElementById('yama')
+    let imputDragon = document.getElementById('dragon')
+    let imputRock = document.getElementById('rock')
+    let imputGranito = document.getElementById('granito')
+
+    let spanImagenJugador = document.getElementById('imagen_jugador')
+    let spanImagenPc = document.getElementById('imagen_pc')
+
+    if (imputLangostino.checked == true) 
+    {
+        spanImagenJugador.innerHTML = '<img src="assets/langostino.png" alt="">'
+    }
+    else if (imputFocaccia.checked == true) {
+        spanImagenJugador.innerHTML = '<img src="assets/focaccia.png" alt="">'
+    }
+    else if (imputYama.checked == true) {
+        spanImagenJugador.innerHTML = '<img src="assets/llama.png" alt="">'
+    }
+    else if (imputDragon.checked == true) {
+        spanImagenJugador.innerHTML = '<img src="assets/dragon_cuerpo.png" alt="">'
+    }
+    else if (imputRock.checked == true) {
+        spanImagenJugador.innerHTML = '<img src="assets/roca.png" alt="">'
+    }
+    else if (imputGranito.checked == true) {
+        spanImagenJugador.innerHTML = '<img src="assets/granito.png" alt="">'
+    }
+
+
 }
