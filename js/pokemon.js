@@ -74,7 +74,7 @@ function seleccionarMascotaJugador() {
         spanMascotaJugador.innerHTML = 'Rock'
     }
     else if (imputGranito.checked == true) {
-        spanMascotaJugador.innerHTML = 'Granito'
+        spanMascotaJugador.innerHTML = 'Escorpión'
     }
     else
     {
