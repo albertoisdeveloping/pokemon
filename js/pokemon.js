@@ -250,33 +250,39 @@ function combate() {
 
 //FUNCION CREA MENSAJE EN LA SECCION QUE QUEREMOS CON EL TEXTO QUE QUEREMOS
 function crearMensaje(resultado) {
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo= document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota ataca con '+ataqueJugador+' y el enemigo ataca con '+ataquePc+ ' - '+resultado
+   // let sectionMensajes = document.getElementById('mensajes')
+   // let parrafo= document.createElement('p')
+   // parrafo.innerHTML = 'Tu mascota ataca con '+ataqueJugador+' y el enemigo ataca con '+ataquePc+ ' - '+resultado
+   // sectionMensajes.appendChild(parrafo)
 
-    sectionMensajes.appendChild(parrafo)
+    let pNotificaciones = document.getElementById('notificaciones')
+    pNotificaciones.innerHTML = resultado
+
+    let pAtaquesJugador = document.getElementById('ataques_jugador')
+    pAtaquesJugador.innerHTML = ataqueJugador
+    
+    let pAtaquesPc = document.getElementById('ataques_pc')
+    pAtaquesPc.innerHTML = ataquePc
 }   
 //Revisar las vidas e invocar funcion mensajeFinal
 function revisarVidas() {
     if (vidasJugador <= 0)
     {
-        mensajeFinal('HAS PERDIDO')
+        mensajeFinal('FINAL! HAS PERDIDO')
     }
     else if (vidasPc <= 0)
     {
-        mensajeFinal('HAS GANADO')
+        mensajeFinal('FINAL! HAS GANADO')
     }
 }
 //CREA MENSAJE FINAL CON RESULTADO EN LA SECTION MENSAJE
 function mensajeFinal(resultadoFinal) {
+    let sectionMensajes = document.getElementById('notificaciones')
+    sectionMensajes.innerHTML = resultadoFinal
+
     //MOSTRAR REINICIAR
     let seccionReiniciarJuego = document.getElementById('seccion_reiniciar')
     seccionReiniciarJuego.style.display = 'flex'
-
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo= document.createElement('p')
-    parrafo.innerHTML = resultadoFinal
-    sectionMensajes.appendChild(parrafo)
 
     //DESACTIVAMOS BOTONES ATAQUE
     let botonFuego = document.getElementById('boton_fuego')

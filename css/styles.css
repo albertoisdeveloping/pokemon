@@ -3,7 +3,6 @@
 
 body {
     font-family: 'Press Start 2P', cursive;
-
     background-color: #404258;
     color: white;
 }
@@ -90,12 +89,6 @@ button {
     align-items: center;
     justify-content: center;
 }
-#mensajes {
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-    display: flex;
-    flex-direction: column
-}
 
 #seccion_reiniciar {
     justify-content: center
@@ -120,8 +113,48 @@ button {
     margin: 15px 0px;
 }
 #div_vidas {
+}
+#div_vidas span {
+    font-size: 15px;
+}
+#marcador_ataques {
+    width: 300px;
+    text-align: center;
     font-size: 25px;
+
+}
+#marcador_ataques p {
 }
 #marcador {
     display: none;
+}
+#mensajes {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#mAtaques {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#mAtaques p {
+    margin: 10px 70px;
+}
+#notificaciones {
+    width: 300px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+
+    
+}
+#boton_reiniciar {
+    margin-top: 0px;
 }
