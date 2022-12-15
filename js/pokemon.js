@@ -153,19 +153,19 @@ function eleccionPc() {
 // 3 FUNCIONES ELECCION ATAQUES NUESTROS - Asignamos nombre del ataque a ataqueJugador + invocamos F.eleccionAtaquePc
 function ataqueFuego()
 {
-    ataqueJugador='Fuego'
+    ataqueJugador='Fuego🔥'
     eleccionAtaquePc()
 
 }
 function ataqueAgua()
 {
-    ataqueJugador='Agua'
+    ataqueJugador='Agua💦'
     eleccionAtaquePc()
 
 }
 function ataquePiedra()
 {
-    ataqueJugador='Piedra'
+    ataqueJugador='Piedra🪨'
     eleccionAtaquePc()
 
 }
@@ -176,17 +176,17 @@ function eleccionAtaquePc() {
     let ataqueAleatorio = aleatorio(1,3)
     if (ataqueAleatorio == '1')
     {
-        ataquePc = 'Fuego'
+        ataquePc = 'Fuego🔥'
     }
     else
     if (ataqueAleatorio == '2')
     {
-        ataquePc = 'Agua'
+        ataquePc = 'Agua💦'
     }
     else
     if (ataqueAleatorio == '3')
     {
-        ataquePc = 'Piedra'
+        ataquePc = 'Piedra🪨'
     }
     combate()
 
@@ -232,7 +232,7 @@ function combate() {
         crearMensaje('EMPATE')
     }
     else
-    if (ataqueJugador == 'Fuego' && ataquePc == 'Piedra' || ataqueJugador == 'Agua' && ataquePc == 'Fuego' || ataqueJugador == 'Tierra' && ataquePc == 'Agua') {
+    if (ataqueJugador == 'Fuego🔥' && ataquePc == 'Piedra🪨' || ataqueJugador == 'Agua💦' && ataquePc == 'Fuego🔥' || ataqueJugador == 'Piedra🪨' && ataquePc == 'Agua💦') {
         crearMensaje('GANASTE')
         vidasPc--
         spanVidasPc.innerHTML = vidasPc
