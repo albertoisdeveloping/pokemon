@@ -43,6 +43,19 @@ h1 {
 .tarjeta:hover {
     background-color: #50577A;
 } 
+.input_mascota:checked +label {
+    background-color: #50577A;
+}
+.input_mascota:active +label {
+    background-color: #545c85;
+}
+.botones_ataque:hover {
+    background-color: #50577A;
+} 
+.botones_ataque:active {
+    background-color: #5e6891;
+}
+
 .imagen_pokemon {
     width: 100px;
 }
@@ -112,8 +125,6 @@ button {
 #contenedor_vidas p {
     margin: 15px 0px;
 }
-#div_vidas {
-}
 #div_vidas span {
     font-size: 15px;
 }
@@ -122,8 +133,6 @@ button {
     text-align: center;
     font-size: 25px;
 
-}
-#marcador_ataques p {
 }
 #marcador {
     display: none;
