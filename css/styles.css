@@ -184,10 +184,15 @@ button {
 
     }
     .tarjetitas {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        }
     }
     .tarjeta {
-        width: 300px;
+        width: 140px;
     }
     #div_botones_ataque {
         display: flex;
