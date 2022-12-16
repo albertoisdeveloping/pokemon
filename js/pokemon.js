@@ -7,6 +7,8 @@ let vidasJugador = 3
 let vidasPc = 3
 let spanVidasJugador = document.getElementById('vidas_jugador')
 let spanVidasPc = document.getElementById('vidas_pc')
+let nRonda = 0
+
 
 //FUNCION A EJECUTAR CUANDO CARGA LA PÁGINA
 function iniciarJuego() {
@@ -223,6 +225,9 @@ function eleccionAtaquePc() {
     {
         document.getElementById('corazones_pc').innerHTML = '💀'
     }
+
+    nRonda++
+    document.getElementById('ronda').innerHTML = 'Ronda'+' '+nRonda
 }
 
 //FUNCION COMBATE

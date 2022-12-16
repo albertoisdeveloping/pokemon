@@ -132,8 +132,10 @@ button {
     width: 330px;
     text-align: center;
     font-size: 25px;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
+
 #marcador {
     display: none;
 }
@@ -165,5 +167,4 @@ button {
     
 }
 #boton_reiniciar {
-    margin-top: 0px;
-}
+    margin-top: -45px;}
