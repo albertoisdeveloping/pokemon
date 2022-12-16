@@ -117,34 +117,34 @@ function eleccionPc() {
     let numeroAleatorio = aleatorio(1,6)
     if (numeroAleatorio == '1')
     {
-        spanImagenPc.innerHTML = '<img src="assets/langostino.png" alt="">'
+        spanImagenPc.innerHTML = '<img src="assets/langostino.png" alt="" class="imagen_personaje">'
         return 'Langostino'
     }
     else
     if (numeroAleatorio == '2')
     {
-        spanImagenPc.innerHTML = '<img src="assets/focaccia.png" alt="">'
+        spanImagenPc.innerHTML = '<img src="assets/focaccia.png" alt="" class="imagen_personaje">'
         return 'Focaccia'
     }
     else
     if (numeroAleatorio == '3')
     {
-        spanImagenPc.innerHTML = '<img src="assets/llama.png" alt="">'
+        spanImagenPc.innerHTML = '<img src="assets/llama.png" alt="" class="imagen_personaje">'
         return 'Llama'
     }
     if (numeroAleatorio == '4')
     {
-        spanImagenPc.innerHTML = '<img src="assets/dragon_cuerpo.png" alt="">'
+        spanImagenPc.innerHTML = '<img src="assets/dragon_cuerpo.png" alt="" class="imagen_personaje">'
         return 'Dragon'
     }
     if (numeroAleatorio == '5')
     {
-        spanImagenPc.innerHTML = '<img src="assets/roca.png" alt="">'
+        spanImagenPc.innerHTML = '<img src="assets/roca.png" alt="" class="imagen_personaje">'
         return 'Rock'
     }
     if (numeroAleatorio == '6')
     {
-        spanImagenPc.innerHTML = '<img src="assets/granito.png" alt="">'
+        spanImagenPc.innerHTML = '<img src="assets/granito.png" alt="" class="imagen_personaje">'
         return 'Escorpión'
     }
     else
@@ -311,26 +311,25 @@ function seleccionImagenJugador() {
     let imputGranito = document.getElementById('granito')
 
     let spanImagenJugador = document.getElementById('imagen_jugador')
-    let spanImagenPc = document.getElementById('imagen_pc')
 
     if (imputLangostino.checked == true) 
     {
-        spanImagenJugador.innerHTML = '<img src="assets/langostino.png" alt="">'
+        spanImagenJugador.innerHTML = '<img src="assets/langostino.png" alt="" class="imagen_personaje">'
     }
     else if (imputFocaccia.checked == true) {
-        spanImagenJugador.innerHTML = '<img src="assets/focaccia.png" alt="">'
+        spanImagenJugador.innerHTML = '<img src="assets/focaccia.png" alt="" class="imagen_personaje">'
     }
     else if (imputYama.checked == true) {
-        spanImagenJugador.innerHTML = '<img src="assets/llama.png" alt="">'
+        spanImagenJugador.innerHTML = '<img src="assets/llama.png" alt="" class="imagen_personaje">'
     }
     else if (imputDragon.checked == true) {
-        spanImagenJugador.innerHTML = '<img src="assets/dragon_cuerpo.png" alt="">'
+        spanImagenJugador.innerHTML = '<img src="assets/dragon_cuerpo.png" alt="" class="imagen_personaje">'
     }
     else if (imputRock.checked == true) {
-        spanImagenJugador.innerHTML = '<img src="assets/roca.png" alt="">'
+        spanImagenJugador.innerHTML = '<img src="assets/roca.png" alt="" class="imagen_personaje">'
     }
     else if (imputGranito.checked == true) {
-        spanImagenJugador.innerHTML = '<img src="assets/granito.png" alt="">'
+        spanImagenJugador.innerHTML = '<img src="assets/granito.png" alt="" class="imagen_personaje">'
     }
 
 
