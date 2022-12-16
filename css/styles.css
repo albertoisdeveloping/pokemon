@@ -211,6 +211,9 @@ button {
         font-size: 18px;
         margin: 1px 0px;
     }
+    #contenedor_vidas p {
+        margin: 0px;
+    }
     #notificaciones {
         margin: 5px;
     }
