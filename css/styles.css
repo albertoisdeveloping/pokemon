@@ -125,9 +125,6 @@ button {
     font-size: 28px;
     margin: 1px 0px;
 }
-#contenedor_vidas p {
-    margin: 15px 0px;
-}
 #div_vidas span {
     font-size: 15px;
 }
@@ -182,6 +179,10 @@ button {
         font-size: large;
         text-align: center;
     }
+    #h2_ataque {
+        display: none;
+
+    }
     .tarjetitas {
         flex-direction: column;
     }
@@ -195,6 +196,7 @@ button {
     }
     .botones_ataque {
         margin: 5px;
+        font-size: 10px;
     }
     #contenedor_vidas {
         display: flex;
@@ -208,5 +210,8 @@ button {
     #contenedor_vidas h2 {
         font-size: 18px;
         margin: 1px 0px;
+    }
+    #notificaciones {
+        margin: 5px;
     }
 }
