@@ -169,8 +169,16 @@ button {
 #boton_reiniciar {
     margin-top: -45px;
 }
-
-@media (max-width: 500px) {
+@media (max-width: 870px) {
+    .tarjetitas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        }
+}
+@media (max-width: 700px) {
     h1 {
         margin-top: 10px;
         font-size: 60px;

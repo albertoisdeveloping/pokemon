@@ -1,6 +1,32 @@
 window.addEventListener('load', iniciarJuego)
 
+const botonMascota = document.getElementById('boton_mascota')
+const botonFuego = document.getElementById('boton_fuego')
+const botonAgua = document.getElementById('boton_agua')
+const botonPiedra = document.getElementById('boton_piedra')
+const botonReiniciar = document.getElementById('boton_reiniciar')
+const seccionSeleccionarAtaque = document.getElementById('seleccionar_ataque')
+const seccionReiniciarJuego = document.getElementById('seccion_reiniciar')
+const spanMascotaJugador = document.getElementById('mascota_jugador')
+const spanMascotaPc = document.getElementById('mascota_pc')
+const seccionSeleccionarMascota = document.getElementById('seleccionar_mascota')
+const spanImagenPc = document.getElementById('imagen_pc')
+const pNotificaciones = document.getElementById('notificaciones')
+const pAtaquesJugador = document.getElementById('ataques_jugador')
+const pAtaquesPc = document.getElementById('ataques_pc')
+const sectionMensajes = document.getElementById('notificaciones')
+const spanImagenJugador = document.getElementById('imagen_jugador')
+const contenedorTarjetas = document.getElementById('contenedorTarjetas')
+
 //VARIABLES GLOBALES
+let pokemons = []
+let opcionDePokemon
+let imputLangostino 
+let imputFocaccia
+let imputYama
+let imputDragon
+let imputRock
+let imputGranito
 let ataqueJugador = 'nada'
 let ataquePc
 let vidasJugador = 3
@@ -9,33 +35,79 @@ let spanVidasJugador = document.getElementById('vidas_jugador')
 let spanVidasPc = document.getElementById('vidas_pc')
 let nRonda = 0
 
+class Pokemon {
+    constructor(nombre, foto, vida) {
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+        this.ataques = []
+    }
+}
+
+let langostino = new Pokemon('Langostino', "assets/langostino.png", 5)
+let focaccia = new Pokemon('Focaccia', "assets/focaccia.png", 5)
+let llama = new Pokemon('Llama', "assets/llama.png", 5)
+let dragon = new Pokemon('Dragon', "assets/dragon_cuerpo.png", 5)
+let roca = new Pokemon('Roca', "assets/roca.png", 5)
+let escorpion = new Pokemon('Escorpión', "assets/granito.png", 5)
+
+langostino.ataques.push(
+    {nombre: '💦', id: 'boton_agua'},
+    {nombre: '💦', id: 'boton_agua'},
+    {nombre: '💦', id: 'boton_agua'},
+    {nombre: '🪨', id: 'boton_piedra'},
+    {nombre: '🪨', id: 'boton_piedra'},
+)
+
+focaccia.ataques.push(
+    {nombre: '🔥', id: 'boton_fuego'},
+    {nombre: '🔥', id: 'boton_fuego'},
+    {nombre: '💦', id: 'boton_agua'},
+    {nombre: '💦', id: 'boton_agua'},
+    {nombre: '🪨', id: 'boton_piedra'},
+)
+
+llama.ataques.push(
+    {nombre: '🪨', id: 'boton_piedra'},
+    {nombre: '🪨', id: 'boton_piedra'},
+    {nombre: '🪨', id: 'boton_piedra'},
+    {nombre: '🔥', id: 'boton_fuego'},
+    {nombre: '🔥', id: 'boton_fuego'},
+)
+
+pokemons.push(langostino,focaccia,llama,dragon,roca,escorpion)
 
 //FUNCION A EJECUTAR CUANDO CARGA LA PÁGINA
 function iniciarJuego() {
+    pokemons.forEach((pokemon) => {
+        opcionDePokemon = `
+        <input type="radio" name="mascota" id="${pokemon.nombre}" class="input_mascota">
+        <label class="tarjeta" for="${pokemon.nombre}">
+            <p>${pokemon.nombre}</p>
+            <img class="imagen_pokemon" src="${pokemon.foto}" alt="${pokemon.nombre}">
+        </label>
+        `
+        contenedorTarjetas.innerHTML += opcionDePokemon
+
+         imputLangostino = document.getElementById('Langostino')
+         imputFocaccia = document.getElementById('Focaccia')
+         imputYama = document.getElementById('Llama')
+         imputDragon = document.getElementById('Dragon')
+         imputRock = document.getElementById('Roca')
+         imputGranito = document.getElementById('Escorpión')
+    })
 
     //AL PULSAR SELECCIONAR MASCOTA, INICIA F.SELECCIONMASCOTA
-    let botonMascota = document.getElementById('boton_mascota')
     botonMascota.addEventListener('click', seleccionarMascotaJugador)
     botonMascota.addEventListener('click', seleccionImagenJugador)
-
     //AL PULSAR BOTONES DE ATAQUES, INICIA F.ATAQUEX
-    let botonFuego = document.getElementById('boton_fuego')
     botonFuego.addEventListener('click', ataqueFuego)
-
-    let botonAgua = document.getElementById('boton_agua')
     botonAgua.addEventListener('click', ataqueAgua)
-
-    let botonPiedra = document.getElementById('boton_piedra')
     botonPiedra.addEventListener('click', ataquePiedra)
-
     //AL PULSAR REINICIAR, INICIA F.REINICIAR
-    let botonReiniciar = document.getElementById('boton_reiniciar')
     botonReiniciar.addEventListener('click', reiniciar)
-
     //ESCONDER SECCIÓN ATAQUE
-    let seccionSeleccionarAtaque = document.getElementById('seleccionar_ataque')
     seccionSeleccionarAtaque.style.display = 'none'
-    let seccionReiniciarJuego = document.getElementById('seccion_reiniciar')
     seccionReiniciarJuego.style.display = 'none'
 
 }
@@ -46,37 +118,26 @@ function aleatorio(min,max){
 }
 //ENCONTRAR MASCOTAJUGADOR ELEGIDA Y ESCRIBIR AMBAS MASCOTAS EN SPAN
 function seleccionarMascotaJugador() {
-    let imputLangostino = document.getElementById('langostino')
-    let imputFocaccia = document.getElementById('focaccia')
-    let imputYama = document.getElementById('yama')
-    let imputDragon = document.getElementById('dragon')
-    let imputRock = document.getElementById('rock')
-    let imputGranito = document.getElementById('granito')
-
-
-    let spanMascotaJugador = document.getElementById('mascota_jugador')
-    let spanMascotaPc = document.getElementById('mascota_pc')
-
     
     //SEGÚN MASCOTA CHEKEADA, MOSTRAR 'MASCOTAX' EN EL SPAN ELEGIDO, SINO, ALERTA SELECCIONAR MASCOTA
     if (imputLangostino.checked == true) 
     {
-        spanMascotaJugador.innerHTML = 'Langostino'
+        spanMascotaJugador.innerHTML = imputLangostino.id
     }
     else if (imputFocaccia.checked == true) {
-        spanMascotaJugador.innerHTML = 'Focaccia'
+        spanMascotaJugador.innerHTML = imputFocaccia.id
     }
     else if (imputYama.checked == true) {
-        spanMascotaJugador.innerHTML = 'Llama'
+        spanMascotaJugador.innerHTML = imputYama.id
     }
     else if (imputDragon.checked == true) {
-        spanMascotaJugador.innerHTML = 'Dragon'
+        spanMascotaJugador.innerHTML = imputDragon.id
     }
     else if (imputRock.checked == true) {
-        spanMascotaJugador.innerHTML = 'Rock'
+        spanMascotaJugador.innerHTML = imputRock.id
     }
     else if (imputGranito.checked == true) {
-        spanMascotaJugador.innerHTML = 'Escorpión'
+        spanMascotaJugador.innerHTML = imputGranito.id
     }
     else
     {
@@ -84,27 +145,21 @@ function seleccionarMascotaJugador() {
         spanMascotaPc='' //si el jugador no selecciona mascota el pc tampoco
     }
     //ESCRIBIR LA ELECCION DEL PC EN EL SPAN DE MASCOTAPC
-    spanMascotaPc.innerHTML = eleccionPc()
+    eleccionPc()
 
     if (spanMascotaJugador.innerHTML !== '') {
         //DESBLOQUEAR BOTONES ATAQUE
-        let botonFuego = document.getElementById('boton_fuego')
         botonFuego.disabled = false
-        let botonAgua = document.getElementById('boton_agua')
         botonAgua.disabled = false
-        let botonPiedra = document.getElementById('boton_piedra')
         botonPiedra.disabled = false
         //CAMBIAR SECCION SELECCIONAR JUGADOR POR SECCION SELECCIONAR ATAQUE
             //OCULTAR SECCION MASCOTA
-            let seccionSeleccionarMascota = document.getElementById('seleccionar_mascota')
             seccionSeleccionarMascota.style.display = 'none'
             //MOSTRAR SECCIÓN ATAQUE
-            let seccionSeleccionarAtaque = document.getElementById('seleccionar_ataque')
             seccionSeleccionarAtaque.style.display = 'flex'
 
 
         //BLOQUEAR BOTON SELECCIONAR MASCOTA
-        let botonMascota = document.getElementById('boton_mascota')
         botonMascota.disabled = true
     }
 
@@ -112,45 +167,10 @@ function seleccionarMascotaJugador() {
 
 //ELEGIR MASCOTA ALEATORIA PC y colocarle su imagen
 function eleccionPc() {
-    let spanImagenPc = document.getElementById('imagen_pc')
+    var numeroAleatorio = aleatorio(0,pokemons.length-1)
+    spanMascotaPc.innerHTML = pokemons[numeroAleatorio].nombre
+    spanImagenPc.innerHTML = `<img src="${pokemons[numeroAleatorio].foto}" alt="" class="imagen_personaje">`
 
-    let numeroAleatorio = aleatorio(1,6)
-    if (numeroAleatorio == '1')
-    {
-        spanImagenPc.innerHTML = '<img src="assets/langostino.png" alt="" class="imagen_personaje">'
-        return 'Langostino'
-    }
-    else
-    if (numeroAleatorio == '2')
-    {
-        spanImagenPc.innerHTML = '<img src="assets/focaccia.png" alt="" class="imagen_personaje">'
-        return 'Focaccia'
-    }
-    else
-    if (numeroAleatorio == '3')
-    {
-        spanImagenPc.innerHTML = '<img src="assets/llama.png" alt="" class="imagen_personaje">'
-        return 'Llama'
-    }
-    if (numeroAleatorio == '4')
-    {
-        spanImagenPc.innerHTML = '<img src="assets/dragon_cuerpo.png" alt="" class="imagen_personaje">'
-        return 'Dragon'
-    }
-    if (numeroAleatorio == '5')
-    {
-        spanImagenPc.innerHTML = '<img src="assets/roca.png" alt="" class="imagen_personaje">'
-        return 'Rock'
-    }
-    if (numeroAleatorio == '6')
-    {
-        spanImagenPc.innerHTML = '<img src="assets/granito.png" alt="" class="imagen_personaje">'
-        return 'Escorpión'
-    }
-    else
-    {
-        return 'NULO.'
-    }
 }
 // 3 FUNCIONES ELECCION ATAQUES NUESTROS - Asignamos nombre del ataque a ataqueJugador + invocamos F.eleccionAtaquePc
 function ataqueFuego()
@@ -260,13 +280,10 @@ function crearMensaje(resultado) {
    // parrafo.innerHTML = 'Tu mascota ataca con '+ataqueJugador+' y el enemigo ataca con '+ataquePc+ ' - '+resultado
    // sectionMensajes.appendChild(parrafo)
 
-    let pNotificaciones = document.getElementById('notificaciones')
     pNotificaciones.innerHTML = resultado
 
-    let pAtaquesJugador = document.getElementById('ataques_jugador')
     pAtaquesJugador.innerHTML = ataqueJugador
     
-    let pAtaquesPc = document.getElementById('ataques_pc')
     pAtaquesPc.innerHTML = ataquePc
 }   
 //Revisar las vidas e invocar funcion mensajeFinal
@@ -282,19 +299,14 @@ function revisarVidas() {
 }
 //CREA MENSAJE FINAL CON RESULTADO EN LA SECTION MENSAJE
 function mensajeFinal(resultadoFinal) {
-    let sectionMensajes = document.getElementById('notificaciones')
     sectionMensajes.innerHTML = resultadoFinal
 
     //MOSTRAR REINICIAR
-    let seccionReiniciarJuego = document.getElementById('seccion_reiniciar')
     seccionReiniciarJuego.style.display = 'flex'
 
     //DESACTIVAMOS BOTONES ATAQUE
-    let botonFuego = document.getElementById('boton_fuego')
     botonFuego.disabled = true
-    let botonAgua = document.getElementById('boton_agua')
     botonAgua.disabled = true
-    let botonPiedra = document.getElementById('boton_piedra')
     botonPiedra.disabled = true
 }   
 //REINICIA: MENSAJES, VIDAS, Y MASCOTAS
@@ -303,15 +315,6 @@ function reiniciar() {
 }
 
 function seleccionImagenJugador() {
-    let imputLangostino = document.getElementById('langostino')
-    let imputFocaccia = document.getElementById('focaccia')
-    let imputYama = document.getElementById('yama')
-    let imputDragon = document.getElementById('dragon')
-    let imputRock = document.getElementById('rock')
-    let imputGranito = document.getElementById('granito')
-
-    let spanImagenJugador = document.getElementById('imagen_jugador')
-
     if (imputLangostino.checked == true) 
     {
         spanImagenJugador.innerHTML = '<img src="assets/langostino.png" alt="" class="imagen_personaje">'
