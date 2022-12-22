@@ -54,35 +54,8 @@ let dragon = new Pokemon('Dragon', "assets/dragon_cuerpo.png", 5)
 let roca = new Pokemon('Roca', "assets/roca.png", 5)
 let escorpion = new Pokemon('Escorpión', "assets/granito.png", 5)
 
-<<<<<<< HEAD
-langostino.ataques.push(
-    {nombre: '💦', id: 'boton_agua'},
-    {nombre: '💦', id: 'boton_agua'},
-    {nombre: '💦', id: 'boton_agua'},
-    {nombre: '🪨', id: 'boton_piedra'},
-    {nombre: '🪨', id: 'boton_piedra'},
-)
-
-focaccia.ataques.push(
-    {nombre: '🔥', id: 'boton_fuego'},
-    {nombre: '🔥', id: 'boton_fuego'},
-    {nombre: '💦', id: 'boton_agua'},
-    {nombre: '💦', id: 'boton_agua'},
-    {nombre: '🪨', id: 'boton_piedra'},
-)
-
-llama.ataques.push(
-    {nombre: '🪨', id: 'boton_piedra'},
-    {nombre: '🪨', id: 'boton_piedra'},
-    {nombre: '🪨', id: 'boton_piedra'},
-    {nombre: '🔥', id: 'boton_fuego'},
-    {nombre: '🔥', id: 'boton_fuego'},
-)
-
-=======
 //2
 pokemons.push(langostino,focaccia,llama,dragon,roca,escorpion)
->>>>>>> main
 
 //3
 langostino.ataques.push(
