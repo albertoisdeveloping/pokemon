@@ -44,7 +44,9 @@ class Pokemon {
         this.ataques = []
     }
 }
+// Al crear un Pokemon, hay que declararlo objeto, hacerle push a pokemons, y hacer su push de ataques.
 
+//1
 let langostino = new Pokemon('Langostino', "assets/langostino.png", 5)
 let focaccia = new Pokemon('Focaccia', "assets/focaccia.png", 5)
 let llama = new Pokemon('Llama', "assets/llama.png", 5)
@@ -52,6 +54,7 @@ let dragon = new Pokemon('Dragon', "assets/dragon_cuerpo.png", 5)
 let roca = new Pokemon('Roca', "assets/roca.png", 5)
 let escorpion = new Pokemon('Escorpión', "assets/granito.png", 5)
 
+<<<<<<< HEAD
 langostino.ataques.push(
     {nombre: '💦', id: 'boton_agua'},
     {nombre: '💦', id: 'boton_agua'},
@@ -76,7 +79,50 @@ llama.ataques.push(
     {nombre: '🔥', id: 'boton_fuego'},
 )
 
+=======
+//2
+pokemons.push(langostino,focaccia,llama,dragon,roca,escorpion)
+>>>>>>> main
 
+//3
+langostino.ataques.push(
+    {nombre: 'Splash💦', id: 'boton_agua'},
+    {nombre: 'Aqua💦', id: 'boton_agua'},
+    {nombre: 'Flush💦', id: 'boton_agua'},
+    {nombre: 'Rock🪨', id: 'boton_piedra'},
+    {nombre: 'Medusa🪨', id: 'boton_piedra'},
+)
+focaccia.ataques.push(
+    {nombre: 'Horno🔥', id: 'boton_fuego'},
+    {nombre: 'Llamarada🔥', id: 'boton_fuego'},
+    {nombre: 'Splash💦', id: 'boton_agua'},
+    {nombre: 'Flush💦', id: 'boton_agua'},
+    {nombre: 'Medusa🪨', id: 'boton_piedra'},
+)
+llama.ataques.push(
+    {nombre: 'Rock🪨', id: 'boton_piedra'},
+    {nombre: 'Medusa🪨', id: 'boton_piedra'},
+    {nombre: 'Pietra🪨', id: 'boton_piedra'},
+    {nombre: 'Llamarada🔥', id: 'boton_fuego'},
+    {nombre: 'Horno🔥', id: 'boton_fuego'},
+)
+dragon.ataques.push(
+    {nombre: 'Llamarada🔥', id: 'boton_fuego'},
+    {nombre: 'Horno🔥', id: 'boton_fuego'},
+    {nombre: 'Soplido🔥', id: 'boton_fuego'},
+)
+roca.ataques.push(
+    {nombre: 'Rock🪨', id: 'boton_piedra'},
+    {nombre: 'Medusa🪨', id: 'boton_piedra'},
+    {nombre: 'Pietra🪨', id: 'boton_piedra'},
+
+)
+escorpion.ataques.push(
+    {nombre: 'Rock🪨', id: 'boton_piedra'},
+    {nombre: 'Medusa🪨', id: 'boton_piedra'},
+    {nombre: 'Pietra🪨', id: 'boton_piedra'},
+
+)
 //FUNCION A EJECUTAR CUANDO CARGA LA PÁGINA
 function iniciarJuego() {
     pokemons.forEach((pokemon) => {
@@ -118,7 +164,6 @@ function aleatorio(min,max){
 }
 //ENCONTRAR MASCOTAJUGADOR ELEGIDA Y ESCRIBIR AMBAS MASCOTAS EN SPAN
 function seleccionarMascotaJugador() {
-    
     //SEGÚN MASCOTA CHEKEADA, MOSTRAR 'MASCOTAX' EN EL SPAN ELEGIDO, SINO, ALERTA SELECCIONAR MASCOTA
     if (imputLangostino.checked == true) 
     {
