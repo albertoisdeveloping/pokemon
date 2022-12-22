@@ -20,6 +20,7 @@ const contenedorTarjetas = document.getElementById('contenedorTarjetas')
 
 //VARIABLES GLOBALES
 let pokemons = []
+pokemons.push(langostino,focaccia,llama,dragon,roca,escorpion)
 let opcionDePokemon
 let imputLangostino 
 let imputFocaccia
